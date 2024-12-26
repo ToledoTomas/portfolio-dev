@@ -1,0 +1,53 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import SocialMedia from "../components/SocialMedia.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import GithubIcon from "../icons/Github.astro";
+import MailIcon from "../icons/Gmail.astro";
+---
+
+<Layout
+  title="Portfolio Toledo Tomás - Desarrollador Full Stack"
+  description="Contrata a un desarrollador web full stack con experiencia en la creación de aplicaciones dinámicas y escalables utilizando tecnologías modernas."
+>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <!-- <img
+        class="rounded-full w-12 h-12 mb-4"
+        src="/img-dev.jpg"
+        alt="photo dev"
+      /> -->
+
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        Hola, soy Toledo Tomás
+        <a
+          href="https://www.linkedin.com/in/toledo-tomas-agustin/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-2xl text-wrap">
+        <span class="text-red-100/90">Desarrollador web full stack</span>
+        <span class="opacity-80"
+          >con experiencia en la creación de aplicaciones dinámicas y escalables
+          utilizando tecnologías modernas.</span
+        >
+      </h2>
+      <nav class="flex gap-x-2 mt-8">
+        <SocialMedia href="https://www.linkedin.com/in/toledo-tomas-agustin/">
+          <LinkedinIcon class="size-6" />LinkedIn
+        </SocialMedia>
+        <SocialMedia href="https://github.com/ToledoTomas">
+          <GithubIcon class="size-6" />GitHub
+        </SocialMedia>
+        <SocialMedia href="https://github.com/ToledoTomas">
+          <MailIcon class="size-6" />tomas_toledo98@hotmail.com
+        </SocialMedia>
+      </nav>
+    </section>
+  </main>
+</Layout>
