@@ -5,6 +5,9 @@ import SocialMedia from "../components/SocialMedia.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import GithubIcon from "../icons/Github.astro";
 import MailIcon from "../icons/Gmail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Work from "../icons/Work.astro";
 ---
 
 <Layout
@@ -12,7 +15,7 @@ import MailIcon from "../icons/Gmail.astro";
   description="Contrata a un desarrollador web full stack con experiencia en la creación de aplicaciones dinámicas y escalables utilizando tecnologías modernas."
 >
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <SectionContainer class="py-44 pb-24">
       <!-- <img
         class="rounded-full w-12 h-12 mb-4"
         src="/img-dev.jpg"
@@ -48,6 +51,13 @@ import MailIcon from "../icons/Gmail.astro";
           <MailIcon class="size-6" />tomas_toledo98@hotmail.com
         </SocialMedia>
       </nav>
-    </section>
+    </SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Work class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>

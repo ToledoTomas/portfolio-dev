@@ -36,11 +36,19 @@ const { title, description } = Astro.props;
   }
   html {
     font-family: "Nunito Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   body {
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: #050505;
+    min-height: 100vh;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body {
+      scroll-behavior: auto;
+    }
   }
 </style>

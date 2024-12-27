@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "2020 - 2021",
+    title: "Senior Frontend Developer",
+    description:
+      "I worked as a senior frontend developer at a company where I was responsible for the development of the company's website and the implementation of new features.",
+    link: "https://www.example.com",
+  },
+  {
+    date: "2019 - 2020",
+    title: "Junior Backend Developer",
+    description:
+      "I worked as a junior backend developer at a company where I was responsible for the development of the company's backend services and the implementation of new features.",
+    link: "https://www.example.com",
+  },
+  {
+    date: "2018 - 2019",
+    title: "Full Stack Developer",
+    description:
+      "I worked as a full stack developer at a company where I was responsible for the development of the company's website and backend services.",
+    link: "https://www.example.com",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map(exp => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...exp} />
+      </li>
+    ))
+  }
+</ol>
