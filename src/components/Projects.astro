@@ -1,20 +1,33 @@
 ---
+import NodeIcon from "../icons/Node.astro";
+import ExpressIcon from "../icons/Express.astro";
+import PostgresIcon from "../icons/Postgres.astro";
+
+const TAGS = {
+  NODE: {
+    name: "Node",
+    class: "bg-green-500 text-white",
+    icon: NodeIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-blue-500 text-white",
+    icon: ExpressIcon,
+  },
+  POSTGRES: {
+    name: "Postgres",
+    class: "bg-blue-500 text-white",
+    icon: PostgresIcon,
+  },
+};
 const PROJECTS = [
   {
-    title: "Project 1",
+    title: "LunchUP",
     description: "Description 1",
-    link: "#",
+    link: "https://lunchuppf.netlify.app/",
     github: "#",
-    image: "/programador.png",
-    tags: ["React", "Node", "Express", "MongoDB"],
-  },
-  {
-    title: "Project 2",
-    description: "Description 2",
-    link: "#",
-    github: "#",
-    image: "/programador.png",
-    tags: ["React", "Node", "Express", "MongoDB"],
+    image: "/projects/lunchup.webp",
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRES],
   },
 ];
 ---
@@ -22,14 +35,25 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, tags, image }) => (
     <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <ul>
-        {tags.map(tag => {
-          <li>{tag}</li>;
-        })}
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-200/90">{title}</h3>
+      <p class="text-lg mb-4 text-pretty text-gray-500">{description}</p>
+      <ul class="flex gap-x-2 flex-row">
+        {tags.map(tag => (
+          <li>
+            <span
+              class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2 mb-3`}
+            >
+              <tag.icon class="size-5" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
       </ul>
-      <img src={image} alt={`Captura de pantalla de ${image}`} />
+      <img
+        class="rounded shadow-2xl shadow-white/10 mb-4"
+        src={image}
+        alt={`Captura de pantalla de ${image}`}
+      />
     </article>
   ))
 }
