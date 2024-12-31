@@ -1,15 +1,17 @@
 ---
+import About from "../components/About.astro";
 import Badge from "../components/Badge.astro";
-import Layout from "../layouts/Layout.astro";
-import SocialMedia from "../components/SocialMedia.astro";
-import LinkedinIcon from "../icons/Linkedin.astro";
-import GithubIcon from "../icons/Github.astro";
-import MailIcon from "../icons/Gmail.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Work from "../icons/Work.astro";
 import Code from "../icons/Code.astro";
+import Experience from "../components/Experience.astro";
+import GithubIcon from "../icons/Github.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import MailIcon from "../icons/Gmail.astro";
+import Profile from "../icons/Profile.astro";
 import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialMedia from "../components/SocialMedia.astro";
+import Work from "../icons/Work.astro";
 ---
 
 <Layout
@@ -69,6 +71,13 @@ import Projects from "../components/Projects.astro";
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Profile class="size-7" />
+        Sobre mi
+      </h2>
+      <About />
     </SectionContainer>
   </main>
 </Layout>
