@@ -2,6 +2,9 @@
 import NodeIcon from "../icons/Node.astro";
 import ExpressIcon from "../icons/Express.astro";
 import PostgresIcon from "../icons/Postgres.astro";
+import SocialMedia from "./SocialMedia.astro";
+import Github from "../icons/Github.astro";
+import Web from "../icons/Web.astro";
 
 const TAGS = {
   NODE: {
@@ -41,7 +44,7 @@ const PROJECTS = [
         {tags.map(tag => (
           <li>
             <span
-              class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2 mb-3`}
+              class={`${tag.class} flex gap-x-2 rounded-full text-xs py-1 px-2 mb-3`}
             >
               <tag.icon class="size-5" />
               {tag.name}
@@ -54,6 +57,16 @@ const PROJECTS = [
         src={image}
         alt={`Captura de pantalla de ${image}`}
       />
+      <footer class="flex gap-4 mt-8 flex-wrap">
+        <SocialMedia href="#">
+          <Github class="size-4 md:size-6" />
+          Ver código fuente
+        </SocialMedia>
+        <SocialMedia href="#">
+          <Web class="size-4 md:size-6" />
+          Ir al sitio web
+        </SocialMedia>
+      </footer>
     </article>
   ))
 }
