@@ -5,6 +5,8 @@ import PostgresIcon from "../icons/Postgres.astro";
 import SocialMedia from "./SocialMedia.astro";
 import Github from "../icons/Github.astro";
 import Web from "../icons/Web.astro";
+import JestIcon from "../icons/Jest.astro";
+import JWTIcon from "../icons/JWT.astro";
 
 const TAGS = {
   NODE: {
@@ -22,21 +24,32 @@ const TAGS = {
     class: "bg-blue-500 text-white",
     icon: PostgresIcon,
   },
+  JEST: {
+    name: "Jest",
+    class: "bg-red-500 text-white",
+    icon: JestIcon,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-yellow-500 text-white",
+    icon: JWTIcon,
+  },
 };
 const PROJECTS = [
   {
     title: "LunchUP",
-    description: "Description 1",
+    description:
+      "Este proyecto es la solución para que los padres controlen la nutrición de sus hijos durante los recreos del colegio. Esta app puede seleccionar, personalizar y ordenar viandas saludables para los alumnos.",
     link: "https://lunchuppf.netlify.app/",
-    github: "#",
+    github: "https://github.com/LaunchUP-INC",
     image: "/projects/lunchup.webp",
-    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRES],
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.JWT, TAGS.POSTGRES, TAGS.JEST],
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
+  PROJECTS.map(({ title, description, tags, image, github, link }) => (
     <article>
       <h3 class="text-2xl font-semibold mb-2 text-yellow-200/90">{title}</h3>
       <p class="text-lg mb-4 text-pretty text-gray-500">{description}</p>
@@ -58,11 +71,11 @@ const PROJECTS = [
         alt={`Captura de pantalla de ${image}`}
       />
       <footer class="flex gap-4 mt-8 flex-wrap">
-        <SocialMedia href="#">
+        <SocialMedia href={github}>
           <Github class="size-4 md:size-6" />
           Ver código fuente
         </SocialMedia>
-        <SocialMedia href="#">
+        <SocialMedia href={link}>
           <Web class="size-4 md:size-6" />
           Ir al sitio web
         </SocialMedia>
